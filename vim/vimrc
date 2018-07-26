@@ -1,0 +1,22 @@
+execute pathogen#infect()
+color hybrid_material
+set background=dark
+syntax on
+let g:airline_theme = "hybrid"
+set number
+
+"disable beeping on error"
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
+
+"bind ctrl+\ to toggle nerdtree"
+map <C-\> :NERDTreeToggle<CR>
+
+"bind alt+\ to switch to nerdtree (Switch splits in order)
+map <Esc>w <C-W>w
+"bind ctrl+hjkl to switch between splits"
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
