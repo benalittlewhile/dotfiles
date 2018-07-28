@@ -1,5 +1,5 @@
 #setup my vimrc
-echo "source ~/dev/main/dotbackup/vim/vimrc" >> ~/.vimrc
+echo "source ~/dev/dotfiles/vim/vimrc" >> ~/.vimrc
 
 #install pathogen
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
