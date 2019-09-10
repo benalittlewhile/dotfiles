@@ -28,3 +28,10 @@ git clone https://github.com/mattn/emmet-vim.git
 #install polyglot
 cd ~/.vim/bundle
 git clone https://github.com/sheerun/vim-polyglot
+
+#install autopairs
+#May need to change line 416 to the following: return "\<ESC>".cmd."ko\t"
+git clone git://github.com/jiangmiao/auto-pairs.git ~/.vim/bundle/auto-pairs
+
+#install vim completes me
+git clone git://github.com/ajh17/VimCompletesMe.git ~/.vim/pack/vendor/start/VimCompletesMe

@@ -11,6 +11,9 @@ set textwidth=80
 set expandtab
 set shiftwidth=4
 
+"set to save whenever I exit insert mode"
+autocmd InsertLeave * write
+
 "disable beeping on error"
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
