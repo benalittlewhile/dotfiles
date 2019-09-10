@@ -1,9 +1,15 @@
 execute pathogen#infect()
-color hybrid_material
 set background=dark
+color hybrid_material
 syntax on
+hi Normal guibg=NONE ctermbg=NONE
 let g:airline_theme = "hybrid"
 set number
+set tabstop=4
+set autoindent
+set textwidth=80
+set expandtab
+set shiftwidth=4
 
 "disable beeping on error"
 set noerrorbells visualbell t_vb=
@@ -20,3 +26,5 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+"set line numbers to be grey so they're visible in the material theme
+highlight LineNR ctermfg=242

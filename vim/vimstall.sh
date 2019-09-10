@@ -24,3 +24,7 @@ git clone https://github.com/scrooloose/nerdtree
 #install emmet
 cd ~/.vim/bundle
 git clone https://github.com/mattn/emmet-vim.git
+
+#install polyglot
+cd ~/.vim/bundle
+git clone https://github.com/sheerun/vim-polyglot
