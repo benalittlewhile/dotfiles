@@ -1,6 +1,7 @@
 execute pathogen#infect()
 set background=dark
-color hybrid_material
+color hybrid_material"
+set termguicolors
 syntax on
 hi Normal guibg=NONE ctermbg=NONE
 let g:airline_theme = "hybrid"
