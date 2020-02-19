@@ -38,5 +38,11 @@
         "**/.factorypath": true
     },
     "terminal.integrated.shell.linux": "/bin/zsh",
-    "go.formatTool": "goimports"
+    "go.formatTool": "goimports",
+    "macros": {
+        "myFocus": [
+            "workbench.action.focusActiveEditorGroup",
+            "workbench.action.toggleSidebarVisibility"
+        ]
+    }
 }

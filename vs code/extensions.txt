@@ -3,6 +3,7 @@ Dart-Code.flutter
 Equinusocio.vsc-community-material-theme
 Equinusocio.vsc-material-theme
 equinusocio.vsc-material-theme-icons
+geddski.macros
 Ikuyadeu.r
 ms-python.python
 ms-vscode.atom-keybindings

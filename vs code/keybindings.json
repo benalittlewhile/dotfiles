@@ -1,0 +1,14 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+
+    {
+        "key": "cmd+\\",
+        "command": "macros.myFocus",
+        "when": "!editorFocus"
+    },
+    {
+        "key": "cmd+\\",
+        "command": "workbench.view.explorer",
+        "when": "!filesExplorerFocus"
+    }
+]
