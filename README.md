@@ -1,6 +1,8 @@
 # dotfiles
 backup of my dotfiles for various software configurations
 
+![My happy terminal](https://github.com/benalittlewhile/dotfiles/raw/master/terminal.png)
+
 # Iterm2
 I absolutely adore my terminal!! It's beautiful and the colors
 make me happy, I really couldn't ask for anything else. I'm using 
