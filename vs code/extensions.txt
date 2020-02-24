@@ -5,6 +5,7 @@ Equinusocio.vsc-material-theme
 equinusocio.vsc-material-theme-icons
 geddski.macros
 Ikuyadeu.r
+jcbuisson.vue
 ms-python.python
 ms-vscode.atom-keybindings
 ms-vscode.Go

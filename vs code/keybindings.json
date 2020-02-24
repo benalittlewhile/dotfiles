@@ -10,5 +10,9 @@
         "key": "cmd+\\",
         "command": "workbench.view.explorer",
         "when": "!filesExplorerFocus"
+    },
+    {
+        "key": "cmd+`",
+        "command":"workbench.action.terminal.toggleTerminal"
     }
 ]
