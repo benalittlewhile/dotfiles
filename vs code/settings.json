@@ -6,10 +6,10 @@
     "vim.statusBarColors.normal": ["#373b41", "#ffffff"],
     "vim.statusBarColors.insert": ["#9955ee", "#263238"],
     "workbench.colorCustomizations": {
-        "statusBar.background": "#373b41",
-        "statusBar.noFolderBackground": "#373b41",
-        "statusBar.debuggingBackground": "#373b41",
-        "statusBar.foreground": "#ffffff"
+        "statusBar.background": "#9955ee",
+        "statusBar.noFolderBackground": "#9955ee",
+        "statusBar.debuggingBackground": "#9955ee",
+        "statusBar.foreground": "#263238"
     },
     "editor.fontLigatures": true,
     "editor.fontFamily": "'Fira Code'",
@@ -44,5 +44,6 @@
             "workbench.action.focusActiveEditorGroup",
             "workbench.action.toggleSidebarVisibility"
         ]
-    }
+    },
+    "editor.rulers": [80]
 }
