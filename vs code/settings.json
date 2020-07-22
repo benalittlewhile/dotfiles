@@ -15,7 +15,7 @@
   "editor.fontFamily": "'Fira Code'",
   "editor.fontSize": 15,
   "editor.minimap.enabled": false,
-  "workbench.tree.indent": 6,
+  "workbench.tree.indent": 18,
   "files.autoSave": "onFocusChange",
   "editor.wordWrap": "wordWrapColumn",
   "editor.wordWrapColumn": 80,
@@ -71,5 +71,7 @@
   },
   "html.format.wrapAttributes": "auto",
   "html.format.wrapLineLength": 80,
-  "terminal.integrated.fontSize": 14
+  "terminal.integrated.fontSize": 14,
+  "customizeUI.titleBar": "inline",
+  "window.titleBarStyle": "native"
 }

@@ -8,6 +8,8 @@ esbenp.prettier-vscode
 geddski.macros
 golang.go
 Ikuyadeu.r
+iocave.customize-ui
+iocave.monkey-patch
 jcbuisson.vue
 ms-python.python
 ms-vscode-remote.remote-ssh
@@ -16,3 +18,4 @@ ms-vscode.atom-keybindings
 PKief.material-icon-theme
 tobiasalthoff.atom-material-theme
 vscodevim.vim
+xabikos.JavaScriptSnippets
