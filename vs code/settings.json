@@ -1,55 +1,79 @@
 {
-    "editor.multiCursorModifier": "ctrlCmd",
-    "editor.formatOnPaste": true,
-    "workbench.colorTheme": "Atom Material Theme",
-    "vim.statusBarColorControl": true,
-    "vim.statusBarColors.normal": ["#373b41", "#ffffff"],
-    "vim.statusBarColors.insert": ["#9955ee", "#263238"],
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#373b41",
-        "statusBar.noFolderBackground": "#373b41",
-        "statusBar.debuggingBackground": "#373b41",
-        "statusBar.foreground": "#ffffff"
-    },
-    "editor.fontLigatures": true,
-    "editor.fontFamily": "'Fira Code'",
-    "editor.fontSize": 15,
-    "editor.minimap.enabled": false,
-    "workbench.tree.indent": 6,
-    "files.autoSave": "onFocusChange",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.formatOnPaste": true,
+  "workbench.colorTheme": "Atom Material Theme",
+  "vim.statusBarColorControl": true,
+  "vim.statusBarColors.normal": ["#373b41", "#ffffff"],
+  "vim.statusBarColors.insert": ["#9955ee", "#263238"],
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#9955ee",
+    "statusBar.noFolderBackground": "#9955ee",
+    "statusBar.debuggingBackground": "#9955ee",
+    "statusBar.foreground": "#263238"
+  },
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "'Fira Code'",
+  "editor.fontSize": 15,
+  "editor.minimap.enabled": false,
+  "workbench.tree.indent": 18,
+  "files.autoSave": "onFocusChange",
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 80,
+  "[plaintext]": {
+    "editor.wordBasedSuggestions": false,
+    "editor.quickSuggestions": false,
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 80,
-    "[plaintext]": {
-        "editor.wordBasedSuggestions": false,
-        "editor.quickSuggestions": false,
-        "editor.wordWrap": "wordWrapColumn",
-        "editor.wordWrapColumn": 80,
-        "editor.lineNumbers": "off",
-        "editor.renderIndentGuides": false,
-    },
-    "window.zoomLevel": 0,
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "java.errors.incompleteClasspath.severity": "ignore",
-    "files.exclude": {
-        "**/.classpath": true,
-        "**/.project": true,
-        "**/.settings": true,
-        "**/.factorypath": true
-    },
-    "terminal.integrated.shell.linux": "/bin/zsh",
-    "go.formatTool": "goimports",
-    "macros": {
-        "myFocus": [
-            "workbench.action.focusActiveEditorGroup",
-            "workbench.action.toggleSidebarVisibility"
-        ]
-    },
-    "editor.rulers": [80],
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.lineNumbers": "off",
+    "editor.renderIndentGuides": false
+  },
+  "window.zoomLevel": 0,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "java.errors.incompleteClasspath.severity": "ignore",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "terminal.integrated.shell.linux": "/bin/zsh",
+  "go.formatTool": "goimports",
+  "macros": {
+    "myFocus": [
+      "workbench.action.focusActiveEditorGroup",
+      "workbench.action.toggleSidebarVisibility"
+    ]
+  },
+  "editor.rulers": [80],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.tabSize": 2,
+  "[dart]": {
     "editor.formatOnSave": true,
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
-    
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.formatOnSave": true,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wrappingIndent": "same",
+    "editor.wordWrapColumn": 80
+  },
+  "html.format.wrapAttributes": "auto",
+  "html.format.wrapLineLength": 80,
+  "terminal.integrated.fontSize": 14,
+  "customizeUI.titleBar": "inline",
+  "window.titleBarStyle": "native",
+  "editor.lineDecorationsWidth": 0,
+  "editor.glyphMargin": false
 }
