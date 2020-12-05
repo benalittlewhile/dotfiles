@@ -59,3 +59,7 @@ with Windows Terminal. I find it pleasant to look at and clear to read.
 I've moved over from linux/atom/vim/etc to macos, vs code, and
 iterm2. As such, the old setup will be maintained for in /old, 
 with the most recent files residing in the root directory.
+
+I've also added my windows terminal settings.json, it contains
+the settings I prefer for using wsl/Ubuntu for development on 
+Windows
