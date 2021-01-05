@@ -77,10 +77,9 @@
     "editor.wrappingIndent": "same",
     "editor.wordWrapColumn": 80
   },
-  "html.format.wrapAttributes": "auto",
+  "html.format.wrapAttributes": "force-expand-multiline",
   "html.format.wrapLineLength": 80,
   "terminal.integrated.fontSize": 14,
-  "customizeUI.titleBar": "inline",
   "editor.lineDecorationsWidth": 0,
   "editor.glyphMargin": false,
   "workbench.iconTheme": "material-icon-theme",
@@ -89,5 +88,6 @@
   },
   "workbench.startupEditor": "newUntitledFile",
   "workbench.list.horizontalScrolling": true,
+  "customizeUI.titleBar": "inline",
   "window.titleBarStyle": "native"
 }

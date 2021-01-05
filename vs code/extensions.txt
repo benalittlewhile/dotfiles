@@ -8,7 +8,6 @@ equinusocio.vsc-material-theme-icons
 esbenp.prettier-vscode
 geddski.macros
 golang.go
-Ikuyadeu.r
 iocave.customize-ui
 iocave.monkey-patch
 jcbuisson.vue
