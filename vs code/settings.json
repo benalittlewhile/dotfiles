@@ -6,19 +6,27 @@
   "vim.statusBarColors.normal": ["#373b41", "#ffffff"],
   "vim.statusBarColors.insert": ["#9955ee", "#263238"],
   "workbench.colorCustomizations": {
-    "statusBar.background": "#9955ee",
-    "statusBar.noFolderBackground": "#9955ee",
-    "statusBar.debuggingBackground": "#9955ee",
-    "statusBar.foreground": "#263238"
+    "statusBar.background": "#373b41",
+    "statusBar.noFolderBackground": "#373b41",
+    "statusBar.debuggingBackground": "#373b41",
+    "statusBar.foreground": "#ffffff"
   },
   "editor.fontLigatures": true,
-  "editor.fontFamily": "'Fira Code'",
+  "editor.fontFamily": "Fira Code",
   "editor.fontSize": 15,
   "editor.minimap.enabled": false,
   "workbench.tree.indent": 18,
   "files.autoSave": "onFocusChange",
   "editor.wordWrap": "wordWrapColumn",
   "editor.wordWrapColumn": 80,
+  "[markdown]": {
+    "editor.wordBasedSuggestions": false,
+    "editor.quickSuggestions": false,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 80,
+    "editor.lineNumbers": "off",
+    "editor.renderIndentGuides": false
+  },
   "[plaintext]": {
     "editor.wordBasedSuggestions": false,
     "editor.quickSuggestions": false,
@@ -69,11 +77,17 @@
     "editor.wrappingIndent": "same",
     "editor.wordWrapColumn": 80
   },
-  "html.format.wrapAttributes": "auto",
+  "html.format.wrapAttributes": "force-expand-multiline",
   "html.format.wrapLineLength": 80,
   "terminal.integrated.fontSize": 14,
-  "customizeUI.titleBar": "inline",
-  "window.titleBarStyle": "native",
   "editor.lineDecorationsWidth": 0,
-  "editor.glyphMargin": false
+  "editor.glyphMargin": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "vim.handleKeys": {
+    "<C-w>": false
+  },
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.list.horizontalScrolling": true,
+  "customizeUI.titleBar": "inline",
+  "window.titleBarStyle": "native"
 }

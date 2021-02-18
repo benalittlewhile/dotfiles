@@ -1,4 +1,5 @@
 alexbabichev.formatter-pug
+Angular.ng-template
 Dart-Code.dart-code
 Dart-Code.flutter
 Equinusocio.vsc-community-material-theme
@@ -7,13 +8,14 @@ equinusocio.vsc-material-theme-icons
 esbenp.prettier-vscode
 geddski.macros
 golang.go
-Ikuyadeu.r
 iocave.customize-ui
 iocave.monkey-patch
 jcbuisson.vue
 ms-python.python
+ms-toolsai.jupyter
 ms-vscode-remote.remote-ssh
 ms-vscode-remote.remote-ssh-edit
+ms-vscode-remote.remote-wsl
 ms-vscode.atom-keybindings
 PKief.material-icon-theme
 tobiasalthoff.atom-material-theme
