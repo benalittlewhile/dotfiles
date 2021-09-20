@@ -5,10 +5,11 @@
   "vim.statusBarColorControl": true,
   "vim.statusBarColors.normal": ["#373b41", "#ffffff"],
   "vim.statusBarColors.insert": ["#9955ee", "#263238"],
+  "vim.surround": true,
   "workbench.colorCustomizations": {
-    "statusBar.background": "#373b41",
-    "statusBar.noFolderBackground": "#373b41",
-    "statusBar.debuggingBackground": "#373b41",
+    "statusBar.background": "#5f00af",
+    "statusBar.noFolderBackground": "#5f00af",
+    "statusBar.debuggingBackground": "#5f00af",
     "statusBar.foreground": "#ffffff",
     "terminal.ansiBlack": "#263238",
     "terminal.ansiRed": "#e54b4b",
@@ -27,7 +28,8 @@
     "terminal.ansiBrightCyan": "#89ddff",
     "terminal.ansiBrightWhite": "#ffffff",
     "terminal.background": "#263238",
-    "terminal.foreground": "#eceff1"
+    "terminal.foreground": "#eceff1",
+    "statusBar.debuggingForeground": "#ffffff"
   },
   "settingsSync.ignoredSettings": [
     "editor.fontSize",
@@ -35,7 +37,7 @@
   ],
   "editor.fontLigatures": true,
   "editor.fontFamily": "delugia nerd font",
-  "editor.fontSize": 18,
+  "editor.fontSize": 17,
   "terminal.integrated.fontSize": 16,
   "editor.tabSize": 2,
   "editor.minimap.enabled": false,
@@ -58,9 +60,10 @@
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 80,
     "editor.lineNumbers": "off",
-    "editor.renderIndentGuides": false
+    "editor.renderIndentGuides": false,
+    "editor.autoIndent": "none",
+    "editor.wrappingIndent": "none"
   },
-  "window.zoomLevel": 0,
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "java.errors.incompleteClasspath.severity": "ignore",
@@ -72,12 +75,6 @@
   },
   "terminal.integrated.shell.linux": "/bin/zsh",
   "go.formatTool": "goimports",
-  "macros": {
-    "myFocus": [
-      "workbench.action.focusActiveEditorGroup",
-      "workbench.action.toggleSidebarVisibility"
-    ]
-  },
   "editor.rulers": [80],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[javascript]": {
@@ -112,5 +109,12 @@
   "workbench.list.horizontalScrolling": true,
   "customizeUI.titleBar": "inline",
   "angular.experimental-ivy": true,
-  "window.titleBarStyle": "native"
+  "window.titleBarStyle": "native",
+  "editor.scrollBeyondLastColumn": 0,
+  "rewrap.autoWrap.enabled": true,
+  "cSpell.userWords": ["hesparia"],
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "vim.leader": ""
 }
