@@ -1,103 +1,75 @@
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the start of this file.
+[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
+#### END FIG ENV VARIABLES ####
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/ben/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME=""
+DISABLE_AUTO_TITLE="true"
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+alias startmongo="brew services start mongodb-community"
+alias stopmongo="brew services stop mongodb-community"
+alias enablefastbackup="sudo sysctl debug.lowpri\\_throttle_enabled=0"
+alias disablefastbackup="sudo sysctl debug.lowpri\\_throttle_enabled=1"
 
-# export MANPATH="/usr/local/man:$MANPATH"
+export HOMEBREW_NO_AUTO_UPDATE=1
+export GOPATH="$HOME/dev/go"
+export PATH="$PATH:/users/ben/dev/installations/flutter/bin:$GOPATH/bin"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+# bonsai.sh -n -L 30 -g 35,20 > ~/.my_bonsai_art.txt
+# neofetch --ascii ~/.my_bonsai_art.txt --ascii_colors 11 3 10 2 0
+neofetch --iterm2 ~/Pictures/termpics
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="$PATH:/users/ben/dev/installations/flutter/bin"
+# prompt stuff
+#
 
-bonsai.sh -n -L 30 -g 35,20 > ~/.my_bonsai_art.txt
-neofetch --ascii ~/.my_bonsai_art.txt --ascii_colors 11 3 10 2 0
+function MYPROMPT {
+  local COLOR_RED="\033[0;31m"
+  local COLOR_YELLOW="\033[0;33m"
+  local COLOR_ORANGE="\033[0;93m"
+  local COLOR_GREEN="\033[0;32m"
+  local COLOR_PURPLE="\033[0;35m"
+  local COLOR_BLUE="\033[0;34m"
+  local COLOR_WHITE="\033[0;37m"
+  local COLOR_RESET="\033[0m"
+  local COLOR_GRAY="\033[0;37m"
+  local PAREN_COLOR=$COLOR_ORANGE
+  # if git repo print usual stuff then (branch) $coloredlambda $promptchar 
+  # if git repo
+  git status &>/dev/null && {
+    # get the head or ref name
+    local branch_name=$(git symbolic-ref --short -q HEAD || git rev-parse --short HEAD);
+
+    local git_modified_color=${COLOR_GREEN};
+    local git_status=$(git status 2>/dev/null | grep "Your branch is ahead" &>/dev/null)
+    if [ "$git_status" != "" ]
+    then
+        git_modified_color=${COLOR_YELLOW}
+    fi
+    local git_status=$(git status --porcelain 2>/dev/null)
+    if [ "$git_status" != "" ]
+    then
+        git_modified_color=${COLOR_RED}
+    fi
+    print "%n%f %~ %u%f${PAREN_COLOR}(${COLOR_GRAY}${branch_name}${PAREN_COLOR})%f ${git_modified_color}\e[1m\U03bb \e[0;94m\U276f%f "
+  } || {
+    print "%n %~ %u\e[0;94m\U276f%f "
+  }
+}
+
+setopt prompt_subst
+PROMPT='$(MYPROMPT)'
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the end of this file.
+[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+#### END FIG ENV VARIABLES ####

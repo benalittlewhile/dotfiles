@@ -11,3 +11,7 @@ rm vs\ code/extensions.txt
 code --list-extensions >> vs\ code/extensions.txt
 cp ~/Library/Application\ Support/Code/User/settings.json vs\ code/settings.json
 cp ~/Library/Application\ Support/Code/User/keybindings.json vs\ code/keybindings.json
+
+# zsh
+rm iterm2/.zshrc
+cp ~/.zshrc iterm2/.zshrc

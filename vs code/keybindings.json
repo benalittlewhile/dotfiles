@@ -23,6 +23,10 @@
     "command": "-workbench.action.previousEditor"
   },
   {
+    "key": "cmd+shift+[",
+    "command": "workbench.action.splitEditorLeft"
+  },
+  {
     "key": "shift+j",
     "command": "workbench.action.previousEditor",
     "when": "vim.mode != 'Insert'"
@@ -30,6 +34,10 @@
   {
     "key": "cmd+shift+]",
     "command": "-workbench.action.nextEditor"
+  },
+  {
+    "key": "cmd+shift+]",
+    "command": "workbench.action.splitEditorRight"
   },
   {
     "key": "shift+k",
@@ -44,7 +52,7 @@
   {
     "key": "`",
     "command": "terminal.focus",
-    "when": "vim.mode != 'Insert' && !terminalFocus"
+    "when": "vim.mode != 'Normal' && !terminalFocus && vim.mode != 'SurroundInputMode' && vim.mode != 'Insert' && vim.mode != 'SearchInProgressMode'"
   },
   {
     "key": "cmd+`",
@@ -57,7 +65,7 @@
   {
     "key": "\\",
     "command": "workbench.files.action.showActiveFileInExplorer",
-    "when": "editorFocus"
+    "when": "editorFocus && vim.mode != 'Insert' && vim.mode != 'SearchInProgressMode'"
   },
   {
     "key": "\\",
