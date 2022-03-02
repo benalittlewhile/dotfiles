@@ -3,7 +3,7 @@ echo "source ~/dev/dotfiles/vim/vimrc" >> ~/.vimrc
 
 #install pathogen
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-curl -LSso ~/vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 #install hybrid-material theme
 git clone https://github.com/kristijanhusak/vim-hybrid-material ~/.vim/bundle/vim-hybrid-material
