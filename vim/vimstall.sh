@@ -11,6 +11,9 @@ git clone https://github.com/kristijanhusak/vim-hybrid-material ~/.vim/bundle/vi
 #install airline
 git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
 
+#install airline themes
+git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
+
 #install vim-surround
 mkdir -p ~/.vim/pack/tpope/start
 cd ~/.vim/pack/tpope/start
