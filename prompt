@@ -1,0 +1,42 @@
+#
+# prompt stuff
+#
+
+function MYPROMPT {
+  local COLOR_RED="%{\033[0;31m%}"
+  local COLOR_YELLOW="%{\033[0;33m%}"
+  local COLOR_ORANGE="%{\033[0;93m%}"
+  local COLOR_GREEN="%{\033[0;32m%}"
+  local COLOR_PURPLE="%{\033[0;35m%}"
+  local COLOR_BLUE="%{\033[0;34m%}"
+  local COLOR_WHITE="%{\033[0;37m%}"
+  local COLOR_RESET="%{\033[0m%}"
+  local COLOR_GRAY="%{\033[0;37m%}"
+  local PAREN_COLOR=$COLOR_ORANGE
+  # if git repo print usual stuff then (branch) $coloredlambda $promptchar 
+  # if git repo
+  git status &>/dev/null && {
+    # get the head or ref name
+    local branch_name=$(git symbolic-ref --short -q HEAD || git rev-parse --short HEAD);
+
+    local git_modified_color=${COLOR_GREEN};
+    local git_status=$(git status 2>/dev/null | grep "Your branch is ahead" &>/dev/null)
+    if [ "$git_status" != "" ]
+    then
+        git_modified_color=${COLOR_YELLOW}
+    fi
+    local git_status=$(git status --porcelain 2>/dev/null)
+    if [ "$git_status" != "" ]
+    then
+        git_modified_color=${COLOR_RED}
+    fi
+    print "%n%f %~ %u%f${PAREN_COLOR}(${COLOR_GRAY}${branch_name}${PAREN_COLOR})%f ${git_modified_color}%{\e[1m%}\U03bb %{\e[0;94m%}\U276f%f "
+  } || {
+    print "%n %~ %u%{\e[0;94m%}\U276f%f "
+  }
+}
+
+setopt prompt_subst
+PROMPT='$(MYPROMPT)'
+
+
