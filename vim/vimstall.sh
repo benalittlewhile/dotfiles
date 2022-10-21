@@ -6,7 +6,15 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 #install hybrid-material theme
-git clone https://github.com/kristijanhusak/vim-hybrid-material ~/.vim/bundle/vim-hybrid-material
+#git clone https://github.com/kristijanhusak/vim-hybrid-material ~/.vim/bundle/vim-hybrid-material
+# I'm pretty sure this will break the material theme that actually works, so
+# don't do it
+
+# install material
+git clone https://github.com/kaicataldo/material.vim ~/.vim/bundle/material
+
+# install js syntax?
+git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript
 
 #install airline
 git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline

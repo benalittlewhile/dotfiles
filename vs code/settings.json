@@ -1,127 +1,199 @@
 {
-  "vim.changeWordIncludesWhitespace": true,
-  "vim.handleKeys": {
-    "<C-w>": false
-  },
-  "security.workspace.trust.untrustedFiles": "open",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.minimap.enabled": false,
-  "editor.scrollBeyondLastColumn": 0,
-  "[html]": {
-    "editor.wrappingIndent": "same",
-    "editor.wordWrapColumn": 80,
-    "editor.defaultFormatter": "vscode.html-language-features",
-    "editor.formatOnSave": true,
-    "editor.wordWrap": "wordWrapColumn"
-  },
-  "vim.statusBarColors.insert": ["#9955ee", "#263238"],
-  "editor.accessibilitySupport": "off",
-  "workbench.colorTheme": "Atom Material Theme",
-  "vim.statusBarColorControl": true,
-  "workbench.tree.indent": 18,
-  "editor.tabSize": 2,
-  "settingsSync.ignoredSettings": [
-    "editor.fontSize",
-    "terminal.integrated.fontSize"
-  ],
-  "vim.surround": true,
-  "java.errors.incompleteClasspath.severity": "ignore",
-  "[markdown]": {
-    "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 80,
-    "editor.quickSuggestions": false,
-    "editor.lineNumbers": "off",
-    "editor.wordBasedSuggestions": false
-  },
-  "workbench.list.horizontalScrolling": true,
-  "editor.formatOnPaste": true,
-  "terminal.integrated.fontSize": 15,
-  "editor.lineDecorationsWidth": 0,
-  "workbench.iconTheme": "material-icon-theme",
-  "window.titleBarStyle": "native",
-  "editor.fontFamily": "delugia nerd font",
-  "files.exclude": {
-    "**/.project": true,
-    "**/.settings": true,
-    "**/.classpath": true,
-    "**/.factorypath": true
-  },
-  "[go]": {
-    "editor.defaultFormatter": "golang.go"
-  },
-  "customizeUI.titleBar": "inline",
-  "html.format.wrapLineLength": 80,
-  "editor.wordWrap": "on",
-  "files.autoSave": "onFocusChange",
-  "terminal.integrated.shell.linux": "/bin/zsh",
-  "editor.fontLigatures": true,
-  "typescript.preferences.importModuleSpecifier": "non-relative",
-  "html.format.wrapAttributes": "force-expand-multiline",
-  "[dart]": {
-    "editor.suggest.snippetsPreventQuickSuggestions": false,
-    "editor.suggestSelection": "first",
-    "editor.tabCompletion": "onlySnippets",
-    "editor.wordBasedSuggestions": false,
-    "editor.selectionHighlight": false,
-    "editor.formatOnSave": true,
-    "editor.formatOnType": true,
-    "editor.rulers": [80]
-  },
-  "vim.statusBarColors.normal": ["#373b41", "#ffffff"],
-  "editor.suggestSelection": "first",
-  "editor.glyphMargin": false,
-  "[plaintext]": {
-    "editor.wordWrapColumn": 80,
-    "editor.wrappingIndent": "none",
-    // "editor.lineNumbers": "off",
-    "editor.quickSuggestions": false,
-    "editor.wordWrap": "wordWrapColumn",
-    "editor.wordBasedSuggestions": false
-  },
-  "cSpell.userWords": ["hesparia"],
-  "editor.formatOnSave": true,
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter.notebook.ipynb"
-  },
-  "workbench.colorCustomizations": {
-    "terminal.ansiYellow": "#faed70",
-    "terminal.ansiWhite": "#d0d0d0",
-    "terminal.ansiBrightCyan": "#89ddff",
-    "statusBar.debuggingForeground": "#ffffff",
-    "statusBar.foreground": "#ffffff",
-    "terminal.ansiCyan": "#2ddafd",
-    "terminal.ansiBrightYellow": "#ffcb6b",
-    "terminal.ansiBrightGreen": "#c3e88d",
-    "terminal.ansiBrightMagenta": "#c792ea",
-    "terminal.background": "#263238",
-    "terminal.ansiBrightBlack": "#555864",
-    "terminal.ansiMagenta": "#bb80b3",
-    "statusBar.noFolderBackground": "#373b41",
-    "terminal.ansiBrightRed": "#ff5370",
-    "terminal.ansiRed": "#e54b4b",
-    "terminal.foreground": "#eceff1",
-    "statusBar.debuggingBackground": "#373b41",
-    "terminal.ansiGreen": "#9ece58",
-    "terminal.ansiBlue": "#396fe2",
-    "statusBar.background": "#373b41",
-    "terminal.ansiBrightBlue": "#82aaff",
-    "terminal.ansiBrightWhite": "#ffffff",
-    "terminal.ansiBlack": "#263238"
-  },
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "go.formatTool": "goimports",
-  "angular.experimental-ivy": true,
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "vim.leader": "",
-  "workbench.startupEditor": "newUntitledFile",
-  "editor.fontSize": 14.6,
   "editor.multiCursorModifier": "ctrlCmd",
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
   },
   "editor.scrollbar.horizontal": "hidden",
+  "editor.formatOnPaste": true,
+  "workbench.colorTheme": "Atom Material Theme",
+  "vim.statusBarColorControl": true,
+  "vim.statusBarColors.normal": ["#373b41", "#ffffff"],
+  "vim.statusBarColors.insert": ["#9955ee", "#263238"],
+  "editor.accessibilitySupport": "off",
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#373b41",
+    "statusBar.noFolderBackground": "#373b41",
+    "statusBar.debuggingBackground": "#373b41",
+    "statusBar.foreground": "#ffffff",
+    "terminal.ansiBlack": "#263238",
+    "terminal.ansiRed": "#e54b4b",
+    "terminal.ansiGreen": "#9ece58",
+    "terminal.ansiYellow": "#faed70",
+    "terminal.ansiBlue": "#396fe2",
+    "terminal.ansiMagenta": "#bb80b3",
+    "terminal.ansiCyan": "#2ddafd",
+    "terminal.ansiWhite": "#d0d0d0",
+    "terminal.ansiBrightBlack": "#555864",
+    "terminal.ansiBrightRed": "#ff5370",
+    "terminal.ansiBrightGreen": "#c3e88d",
+    "terminal.ansiBrightYellow": "#ffcb6b",
+    "terminal.ansiBrightBlue": "#82aaff",
+    "terminal.ansiBrightMagenta": "#c792ea",
+    "terminal.ansiBrightCyan": "#89ddff",
+    "terminal.ansiBrightWhite": "#ffffff",
+    "terminal.background": "#263238",
+    "terminal.foreground": "#eceff1",
+    "statusBar.debuggingForeground": "#ffffff"
+  },
+  "settingsSync.ignoredSettings": [
+    "editor.fontSize",
+    "terminal.integrated.fontSize",
+    "window.titleBarStyle"
+  ],
+  "vim.surround": true,
+  "editor.fontLigatures": true,
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "editor.fontFamily": "delugia nerd font",
+  "editor.fontSize": 13.8,
+  "terminal.integrated.fontSize": 15,
+  "editor.tabSize": 2,
+  "editor.minimap.enabled": false,
+  "editor.scrollBeyondLastColumn": 0,
+  "workbench.tree.indent": 18,
+  "files.autoSave": "onFocusChange",
+  "editor.formatOnSave": false,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "editor.wordWrap": "on",
+  "[markdown]": {
+    "editor.wordBasedSuggestions": false,
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    },
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 80,
+    "editor.lineNumbers": "off",
+    "editor.renderIndentGuides": false,
+    "editor.guides.indentation": false
+  },
+  "[plaintext]": {
+    "editor.wordBasedSuggestions": false,
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    },
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 80,
+    "editor.lineNumbers": "off",
+    "editor.renderIndentGuides": false,
+    "editor.guides.indentation": false
+  },
+  "cSpell.userWords": ["hesparia"],
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "java.errors.incompleteClasspath.severity": "ignore",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "terminal.integrated.shell.linux": "/bin/zsh",
+  "go.formatTool": "goimports",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.formatOnSave": true,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wrappingIndent": "same",
+    "editor.wordWrapColumn": 80
+  },
+  "html.format.wrapAttributes": "force-expand-multiline",
+  "html.format.wrapLineLength": 80,
+  "editor.lineDecorationsWidth": 0,
+  "editor.glyphMargin": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "vim.handleKeys": {
+    "<C-w>": false,
+    "<shift+j>": false,
+    "<shift+k>": false,
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.list.horizontalScrolling": true,
+  "customizeUI.titleBar": "inline",
+  "angular.experimental-ivy": true,
+  "window.titleBarStyle": "native",
+  "editor.formatOnSaveMode": "modifications",
+  "vim.useCtrlKeys": true,
+  "vim.leader": "",
   "rewrap.autoWrap.enabled": true,
-  "editor.overviewRulerBorder": false
+  "rewrap.reformat": true,
+  "editor.overviewRulerBorder": false,
+  "tailwindCSS.includeLanguages": {
+    "javascript": "javascript",
+    "html": "HTML"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "markdown.preview.fontSize": 16,
+  "svelte.enable-ts-plugin": true,
+  "editor.cursorSmoothCaretAnimation": true,
+  "workbench.list.smoothScrolling": true,
+  "editor.smoothScrolling": true,
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+    // "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["`"],
+      "commands": ["terminal.focus"]
+    },
+    {
+      "before": ["<a-`>"],
+      "commands": ["workbench.action.terminal.toggleTerminal"]
+    },
+    {
+      "before": ["<s-j>"],
+      "commands": []
+    },
+    {
+      "before": ["<s-k>"],
+      "commands": []
+    }
+  ],
+  "vim.easymotion": true,
+   "vim.normalModeKeyBindingsNonRecursive": [    {
+      "before": ["u"],
+      "commands": ["undo"]
+    },
+    {
+      "before": ["C-r"],
+      "commands": ["redo"]
+    }
+  ],
+  "editor.bracketPairColorization.enabled": false,
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "terminal.integrated.shellIntegration.enabled": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB"
 }

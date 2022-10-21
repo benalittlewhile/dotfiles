@@ -1,9 +1,11 @@
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the start of this file.
-[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
-#### END FIG ENV VARIABLES ####
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export COMPLETION_WAITING_DOTS='false'
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/ben/.oh-my-zsh"
@@ -15,7 +17,6 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-alias startmongo="brew services start mongodb-community"
 alias stopmongo="brew services stop mongodb-community"
 alias enablefastbackup="sudo sysctl debug.lowpri\\_throttle_enabled=0"
 alias disablefastbackup="sudo sysctl debug.lowpri\\_throttle_enabled=1"
@@ -33,15 +34,15 @@ neofetch --iterm2 ~/Pictures/termpics
 #
 
 function MYPROMPT {
-  local COLOR_RED="\033[0;31m"
-  local COLOR_YELLOW="\033[0;33m"
-  local COLOR_ORANGE="\033[0;93m"
-  local COLOR_GREEN="\033[0;32m"
-  local COLOR_PURPLE="\033[0;35m"
-  local COLOR_BLUE="\033[0;34m"
-  local COLOR_WHITE="\033[0;37m"
-  local COLOR_RESET="\033[0m"
-  local COLOR_GRAY="\033[0;37m"
+  local COLOR_RED="%{\033[0;31m%}"
+  local COLOR_YELLOW="%{\033[0;33m%}"
+  local COLOR_ORANGE="%{\033[0;93m%}"
+  local COLOR_GREEN="%{\033[0;32m%}"
+  local COLOR_PURPLE="%{\033[0;35m%}"
+  local COLOR_BLUE="%{\033[0;34m%}"
+  local COLOR_WHITE="%{\033[0;37m%}"
+  local COLOR_RESET="%{\033[0m%}"
+  local COLOR_GRAY="%{\033[0;37m%}"
   local PAREN_COLOR=$COLOR_ORANGE
   # if git repo print usual stuff then (branch) $coloredlambda $promptchar 
   # if git repo
@@ -60,16 +61,33 @@ function MYPROMPT {
     then
         git_modified_color=${COLOR_RED}
     fi
-    print "%n%f %~ %u%f${PAREN_COLOR}(${COLOR_GRAY}${branch_name}${PAREN_COLOR})%f ${git_modified_color}\e[1m\U03bb \e[0;94m\U276f%f "
+    print "%n%f %~ %u%f${PAREN_COLOR}(${COLOR_GRAY}${branch_name}${PAREN_COLOR})%f ${git_modified_color}%{\e[1m%}\U03bb %{\e[0;94m%}\U276f%f "
   } || {
-    print "%n %~ %u\e[0;94m\U276f%f "
+    print "%n %~ %u%{\e[0;94m%}\U276f%f "
   }
 }
 
 setopt prompt_subst
 PROMPT='$(MYPROMPT)'
 
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the end of this file.
-[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
-#### END FIG ENV VARIABLES ####
+export GEM_HOME="$HOME/.gem"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# bun completions
+[ -s "/Users/ben/.bun/_bun" ] && source "/Users/ben/.bun/_bun"
+
+# bun
+export BUN_INSTALL="/Users/ben/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/ben/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

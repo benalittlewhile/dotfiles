@@ -15,6 +15,11 @@
     "when": "listFocus && !inputFocus"
   },
   {
+    "key": "cmd+n",
+    "command": "explorer.newFile",
+    "when": "explorerViewletFocus"
+  },
+  {
     "key": "cmd+r",
     "command": "rewrap.rewrapComment"
   },
@@ -50,11 +55,6 @@
     "when": "terminalFocus"
   },
   {
-    "key": "`",
-    "command": "terminal.focus",
-    "when": "vim.mode != 'Normal' && !terminalFocus && vim.mode != 'SurroundInputMode' && vim.mode != 'Insert' && vim.mode != 'SearchInProgressMode'"
-  },
-  {
     "key": "cmd+`",
     "command": "workbench.action.terminal.toggleTerminal"
   },
@@ -71,5 +71,14 @@
     "key": "\\",
     "command": "workbench.action.focusActiveEditorGroup",
     "when": "filesExplorerFocus"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "-workbench.action.openRecent"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "-workbench.action.quickOpenNavigateNextInRecentFilesPicker",
+    "when": "inQuickOpen && inRecentFilesPicker"
   }
 ]

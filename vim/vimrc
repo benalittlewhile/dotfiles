@@ -1,16 +1,28 @@
 execute pathogen#infect()
 set background=dark
-color hybrid_material"
+colorscheme material
 set termguicolors
 syntax on
 hi Normal guibg=NONE ctermbg=NONE
-let g:airline_theme = "hybrid"
+let g:airline_theme = 'material'
+let g:material_theme_style = 'default-community'
+"let g:airline#extensions#tabline#enabled = 1
 set number
-set tabstop=4
+set tabstop=2
 set autoindent
 set textwidth=80
 set expandtab
-set shiftwidth=4
+set shiftwidth=2
+set splitbelow
+set splitright
+
+" okay, now we have to fix terminal colors"
+let g:terminal_ansi_colors = [
+  \'#263238', '#e54b4b', '#9ece58', '#faed70',
+  \'#396fe2', '#bb80b3', '#2ddafd', '#d0d0d0',
+  \'#555864', '#ff5370', '#c3e88d', '#ffcb6b',
+  \'#82aaff', '#c792ea', '#89ddff', '#ffffff' ]
+
 
 "set to save whenever I exit insert mode"
 autocmd InsertLeave * write
@@ -20,15 +32,52 @@ set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
 "bind ctrl+\ to toggle nerdtree"
-map <C-\> :NERDTreeToggle<CR>
+"map <C-\> :NERDTreeToggle %<CR>
 
 "bind alt+\ to switch to nerdtree (Switch splits in order)
 map <Esc>w <C-W>w
+
 "bind ctrl+hjkl to switch between splits"
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+tnoremap <C-j> <C-W>j
+tnoremap <C-k> <C-W>k
+tnoremap <C-h> <C-W>h
+tnoremap <C-l> <C-W>l
+
+"make tab movements a little more sensible"
+map <leader>tn :tabnew<cr>
+map <leader>to :tabonly<cr>
+map <leader>tc :tabclose<cr>
+map <leader>tm :tabmove
+map <leader>t<leader> :tabnext<cr>
+
+"map leader (\)+[ and \+] to go back and forward in buffers
+map <leader>[ :bp<cr>
+map <leader>] :bn<cr>
+
+"map leader b to list buffers
+nnoremap <Leader>b :buffers<CR>
+
+"bind \<number> to go to that number buffer
+nnoremap <Leader>1 :1b<CR>
+nnoremap <Leader>2 :2b<CR>
+nnoremap <Leader>3 :3b<CR>
+nnoremap <Leader>4 :4b<CR>
+nnoremap <Leader>5 :5b<CR>
+nnoremap <Leader>6 :6b<CR>
+nnoremap <Leader>7 :7b<CR>
+nnoremap <Leader>8 :8b<CR>
+nnoremap <Leader>9 :9b<CR>
+nnoremap <Leader>0 :10b<CR>
+
+" Let 'tl' toggle between this and the last accessed tab
+let g:lasttab = 1
+nmap <leader>tl :exe "tabn ".g:lasttab<CR>
+au TabLeave * let g:lasttab = tabpagenr()
 
 "set line numbers to be grey so they're visible in the material theme
 highlight LineNR ctermfg=242
+"let g:airline_powerline_fonts = 1
