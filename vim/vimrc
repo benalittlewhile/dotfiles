@@ -1,4 +1,6 @@
+set nocompatible
 execute pathogen#infect()
+filetype plugin indent on
 set background=dark
 colorscheme material
 set termguicolors
@@ -6,15 +8,27 @@ syntax on
 hi Normal guibg=NONE ctermbg=NONE
 let g:airline_theme = 'material'
 let g:material_theme_style = 'default-community'
-"let g:airline#extensions#tabline#enabled = 1
+
 set number
+set ruler
+set showcmd
+" move to the found search result as you type it"
+set incsearch
+" highlight all search results after search submitted
+set hlsearch
+set backspace=indent,eol,start
 set tabstop=2
-set autoindent
+"below is less useful than following
+"set autoindent
+set smartindent
 set textwidth=80
 set expandtab
 set shiftwidth=2
 set splitbelow
 set splitright
+
+"having rustfmt be case sensitive is dumb
+cnoreabbrev <silent> rustfmt :RustFmt<cr>
 
 " okay, now we have to fix terminal colors"
 let g:terminal_ansi_colors = [
@@ -23,6 +37,8 @@ let g:terminal_ansi_colors = [
   \'#555864', '#ff5370', '#c3e88d', '#ffcb6b',
   \'#82aaff', '#c792ea', '#89ddff', '#ffffff' ]
 
+"set the working directory to the current directory always
+set autochdir
 
 "set to save whenever I exit insert mode"
 autocmd InsertLeave * write
@@ -31,11 +47,9 @@ autocmd InsertLeave * write
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
-"bind ctrl+\ to toggle nerdtree"
-"map <C-\> :NERDTreeToggle %<CR>
-
-"bind alt+\ to switch to nerdtree (Switch splits in order)
-map <Esc>w <C-W>w
+"bind ctrl-d and ctrl-u to also move the cursor to mid-screen
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
 
 "bind ctrl+hjkl to switch between splits"
 map <C-j> <C-W>j
@@ -54,12 +68,21 @@ map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
 map <leader>t<leader> :tabnext<cr>
 
+"Set \e to open the explorer (this obsoletes nerdtree)
+nnoremap <leader>e :Explore<cr>
+
 "map leader (\)+[ and \+] to go back and forward in buffers
 map <leader>[ :bp<cr>
 map <leader>] :bn<cr>
 
 "map leader b to list buffers
-nnoremap <Leader>b :buffers<CR>
+"nnoremap <Leader>b :buffers<CR>
+
+"map leader b to list buffers and immediately ask which to jump to
+nnoremap <Leader>b :ls<cr>:b<space>
+
+"map leader d to close current buffer
+nnoremap <Leader>d :bd<CR>
 
 "bind \<number> to go to that number buffer
 nnoremap <Leader>1 :1b<CR>
@@ -73,11 +96,38 @@ nnoremap <Leader>8 :8b<CR>
 nnoremap <Leader>9 :9b<CR>
 nnoremap <Leader>0 :10b<CR>
 
-" Let 'tl' toggle between this and the last accessed tab
-let g:lasttab = 1
-nmap <leader>tl :exe "tabn ".g:lasttab<CR>
-au TabLeave * let g:lasttab = tabpagenr()
-
 "set line numbers to be grey so they're visible in the material theme
 highlight LineNR ctermfg=242
 "let g:airline_powerline_fonts = 1
+
+"close explorer buffers after closing them
+autocmd FileType netrw setl bufhidden=wipe
+
+"Rust has picky spacing
+autocmd FileType rs setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+
+"I don't like the messy ls output, this function cleans it
+function! CloseHiddenBuffers()
+    " Tableau pour memoriser la visibilite des buffers                                                                                      
+    let visible = {}
+    " Pour chaque onglet...
+    for t in range(1, tabpagenr('$'))
+        " Et pour chacune de ses fenetres...
+        for b in tabpagebuflist(t)
+            " On indique que le buffer est visible.
+            let visible[b] = 1
+        endfor
+    endfor
+    " Pour chaque numero de buffer possible...
+    for b in range(1, bufnr('$'))
+        " Si b est un numero de buffer valide et qu'il n'est pas visible, on le
+        " supprime.
+        if bufexists(b) && !has_key(visible, b)
+            " On ferme donc tous les buffers qui ne valent pas 1 dans le tableau et qui
+            " sont pourtant charges en memoire.
+            execute 'bwipeout' b
+        endif
+    endfor
+  endfun
+
+cnoreabbrev <silent> bcl :call CloseHiddenBuffers()<cr>

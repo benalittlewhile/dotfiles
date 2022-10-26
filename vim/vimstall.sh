@@ -28,9 +28,9 @@ cd ~/.vim/pack/tpope/start
 git clone https://tpope.io/vim/surround.git
 vim -u NONE -c "helptags surround/doc" -c q
 
-#install nerd tree file browser
-cd ~/.vim/bundle
-git clone https://github.com/scrooloose/nerdtree
+#install nerd tree file browser (obsoleted by explore command)
+# cd ~/.vim/bundle
+# git clone https://github.com/scrooloose/nerdtree
 
 #install emmet
 cd ~/.vim/bundle
@@ -45,4 +45,13 @@ git clone https://github.com/sheerun/vim-polyglot
 git clone git://github.com/jiangmiao/auto-pairs.git ~/.vim/bundle/auto-pairs
 
 #install vim completes me
-git clone git://github.com/ajh17/VimCompletesMe.git ~/.vim/pack/vendor/start/VimCompletesMe
+#git clone git://github.com/ajh17/VimCompletesMe.git ~/.vim/pack/vendor/start/VimCompletesMe
+
+# should install youcompleteme
+git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
+cd ~/.vim/bundle/YouCompleteMe
+git submodule update --init --recursive
+./install.py
+
+# install rust stuff
+git clone --depth=1 https://github.com/rust-lang/rust.vim.git ~/.vim/bundle/rust.vim
