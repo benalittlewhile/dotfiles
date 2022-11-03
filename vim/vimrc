@@ -107,7 +107,10 @@ autocmd FileType netrw setl bufhidden=wipe
 autocmd FileType rs setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 
 " fzf to ctrl p
-nmap <C-P> :FZF<CR>
+nmap <C-P> :GFiles --cached --others --exclude-standard<CR>
+
+" leader p to fzf ripgrep script
+nnoremap <Leader>p :Rg<CR>
 
 "I don't like the messy ls output, this function cleans it
 function! CloseHiddenBuffers()
