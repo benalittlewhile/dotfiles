@@ -38,7 +38,7 @@ let g:terminal_ansi_colors = [
   \'#82aaff', '#c792ea', '#89ddff', '#ffffff' ]
 
 "set the working directory to the current directory always
-set autochdir
+" set autochdir
 
 "set to save whenever I exit insert mode"
 autocmd InsertLeave * write
