@@ -1,5 +1,5 @@
 #setup my vimrc
-echo "source ~/dev/dotfiles/vim/vimrc" >> ~/.vimrc
+echo "source ~/dev/dotfiles/vim/vimrc" > ~/.vimrc
 
 #install pathogen
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
@@ -48,10 +48,14 @@ git clone git://github.com/jiangmiao/auto-pairs.git ~/.vim/bundle/auto-pairs
 #git clone git://github.com/ajh17/VimCompletesMe.git ~/.vim/pack/vendor/start/VimCompletesMe
 
 # should install youcompleteme
-git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
-cd ~/.vim/bundle/YouCompleteMe
-git submodule update --init --recursive
-./install.py
+if [ ! -d ~/.vim/bundle/YouCompleteMe ];
+then
+  echo "YouCompleteMe absent, installing"
+  git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
+  cd ~/.vim/bundle/YouCompleteMe
+  git submodule update --init --recursive
+  ./install.py;
+fi
 
 # install rust stuff
 git clone --depth=1 https://github.com/rust-lang/rust.vim.git ~/.vim/bundle/rust.vim
@@ -61,4 +65,8 @@ cd ~/.vim/bundle
 git clone https://github.com/junegunn/fzf
 git clone https://github.com/junegunn/fzf.vim
 
+# go syntax etc.
+git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
+
 echo "need to go install fzf binary now"
+echo "need to go install ripgrep now"
