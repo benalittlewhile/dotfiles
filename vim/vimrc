@@ -106,6 +106,9 @@ autocmd FileType netrw setl bufhidden=wipe
 "Rust has picky spacing
 autocmd FileType rs setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 
+" fzf to ctrl p
+nmap <C-P> :FZF<CR>
+
 "I don't like the messy ls output, this function cleans it
 function! CloseHiddenBuffers()
     " Tableau pour memoriser la visibilite des buffers                                                                                      

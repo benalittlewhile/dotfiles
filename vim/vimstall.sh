@@ -55,3 +55,10 @@ git submodule update --init --recursive
 
 # install rust stuff
 git clone --depth=1 https://github.com/rust-lang/rust.vim.git ~/.vim/bundle/rust.vim
+
+# install fzf!!
+cd ~/.vim/bundle
+git clone https://github.com/junegunn/fzf
+git clone https://github.com/junegunn/fzf.vim
+
+echo "need to go install fzf binary now"
