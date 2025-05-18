@@ -2232,6 +2232,8 @@
 				<key>Red Component</key>
 				<real>0.92549020051956177</real>
 			</dict>
+			<key>Brighten Bold Text</key>
+			<true/>
 			<key>Character Encoding</key>
 			<integer>4</integer>
 			<key>Close Sessions On End</key>
