@@ -2743,17 +2743,8 @@ active_tab_font_style   bold
 inactive_tab_foreground #999999
 inactive_tab_background #283137
 inactive_tab_font_style normal
-tab_bar_min_tabs 2
+tab_bar_min_tabs 1
 
 
 shell_integration no-cursor
 cursor_shape block
-
-macos_option_as_alt yes
-
-# BEGIN_KITTY_FONTS
-font_family      family="Delugia Nerd Font"
-bold_font        auto
-italic_font      auto
-bold_italic_font auto
-# END_KITTY_FONTS
