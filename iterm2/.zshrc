@@ -1,17 +1,14 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export COMPLETION_WAITING_DOTS='false'
+export EDITOR=nvim
+export GIT_EDITOR=nvim
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/ben/.oh-my-zsh"
 
 ZSH_THEME=""
-DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE=true
 
 plugins=(git)
 
@@ -27,7 +24,10 @@ export PATH="$PATH:/users/ben/dev/installations/flutter/bin:$GOPATH/bin"
 
 # bonsai.sh -n -L 30 -g 35,20 > ~/.my_bonsai_art.txt
 # neofetch --ascii ~/.my_bonsai_art.txt --ascii_colors 11 3 10 2 0
-neofetch --iterm2 ~/Pictures/termpics
+if [ -z "$TMUX" ]  && [ -z "$VIM" ]; then
+    neofetch --kitty ~/Pictures/termpics
+fi
+# neofetch --image ~/Pictures/termpics
 
 #
 # prompt stuff
@@ -72,9 +72,6 @@ PROMPT='$(MYPROMPT)'
 
 export GEM_HOME="$HOME/.gem"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # bun completions
@@ -84,10 +81,41 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export BUN_INSTALL="/Users/ben/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# pnpm
-export PNPM_HOME="/Users/ben/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
+export PATH=/opt/homebrew/bin:$PATH
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)"
+eval "$(rbenv init - zsh)"
+export PATH=$PATH:$GEM_HOME/bin
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+alias python=python3
+alias py=python3
+alias pip=pip3
+alias lg=lazygit
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
+        . "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/homebrew/Caskroom/miniconda/base/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+eval "$(zoxide init zsh)"
+
+fancy-ctrl-z () {
+    if [[ $#BUFFER -eq 0 ]]; then
+        BUFFER="fg"
+        zle accept-line
+    else
+        zle push-input
+        zle clear-screen
+    fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
